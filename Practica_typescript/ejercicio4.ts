@@ -29,29 +29,6 @@ console.log('[Ejercicio 4.1]');
 // posibles dentro de la ruta del código dado
 
 
-
-// Ejercicio 4.1
-// Dado el siguiente codigo:
-
-interface EggLayer {
-    layEggs(): void;
- }
-
- interface Flyer {
-    fly(height: number): void;
- }
-
- interface Swimmer {
-    swim(depth: number): void;
- }
-
-type Height = number;
-type Deph = number;
-
-// Restrinja el tipo de ‘valor‘ a ‘string o number‘
-
-
-
 //  Ejercicio 4.2
 // Dado el siguiente codigo:
 
@@ -122,12 +99,14 @@ interface Swimmer {
     swim(depth: number): void;
 }
 
-interface Animal extends EggLayer, Flyer, Swimmer {
-    layEggs(): void;
-    fly(height: number): void;
-}
+type BirdLike = EggLayer & Flyer
 
- // agregar alias de tipo(s) aqui
+type FishLike = EggLayer & Swimmer
+
+type Animal = BirdLike | FishLike
+
+
+ // agregar alias de tipo(s) aqui. 
 
 class Bird implements BirdLike {
     constructor(public species: string) { }
@@ -150,8 +129,8 @@ class Fish implements FishLike {
 
     swim(depth: number): void {
         console.log(`Nadando a una profundidad de ${depth} metros.`);
- }
- }
+    }
+}
 
 function getRandomAnimal() {
     const animals = [
@@ -165,8 +144,14 @@ function getRandomAnimal() {
 }
 
 function interrogateAnimal(animal = getRandomAnimal()) {
-    animal.swim(10) // se llama solo si es un pez
-    animal.fly(10); // se llama solo si es un pajaro
+    if (animal instanceof Fish){
+        // se llama solo si es un pez
+        animal.swim(10)
+    }; 
+    if (animal instanceof Bird) {
+        animal.fly(10);
+    } 
+     // se llama solo si es un pajaro
     return animal.species;
 }
 

@@ -2,4 +2,4 @@
    <h1>Felicitaciones!</h1>                                                 
    <h3>Asignaste al contador del padre: {{currentCounter}}</h3>              
  </div>                                                                      
- <app-child></app-child>
+ <app-child (counterClicked)="congrats($event)"></app-child>

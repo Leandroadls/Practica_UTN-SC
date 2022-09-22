@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
-  currentCounter = 0;
+currentCounter = 0;
   
   constructor() { }
 
   ngOnInit() {
   }
 
+  congrats($event: number): void{
+    this.currentCounter = $event;
+  }
 }

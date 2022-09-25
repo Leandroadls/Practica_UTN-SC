@@ -1,2 +1,2 @@
-<app-child></app-child>
-<button class="btn btn-primary" (click)="callChild()">Detener el contador</button>
+<app-child #childMethod></app-child>
+<button class="btn btn-primary" (click)="childMethod.stopTimer()">Detener el contador</button>

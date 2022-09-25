@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChildComponent } from '../child/child.component';
 
 @Component({
   selector: 'app-parent',
@@ -7,15 +6,11 @@ import { ChildComponent } from '../child/child.component';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
-  @ViewChild(ChildComponent) child: ChildComponent; 
-
+  
   constructor() { }
 
   ngOnInit() {
   }
  
-  callChild() {
-    this.child.stopTimer();
-  }
   
 }

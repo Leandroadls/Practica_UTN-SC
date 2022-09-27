@@ -11,11 +11,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr *ngFor="let event of events">
+        <td>{{event.name}}</td>
+        <td>{{event.date}}</td>
+        <td>{{event.time}}</td>
+        <td>{{event?.location}}</td>
       </tr>
     </tbody>
   </table>

@@ -7,12 +7,9 @@ import { EventDetailsComponent } from './event-details/event-details.component';
 @NgModule({
   declarations: [
     AppComponent,
-    EventDetailsComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+    EventDetailsComponent],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

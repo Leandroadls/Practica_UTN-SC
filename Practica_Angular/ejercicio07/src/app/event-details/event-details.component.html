@@ -1,4 +1,4 @@
-<div>
+<div class="inLine tittles">
   <div style="margin-top:30px;">
     Evento:
   </div>
@@ -9,12 +9,12 @@
     Hora:
   </div>
   <div>
-    Direccion:
+    Direccion: 
   </div>
 </div>
 
-<div>
-  <div style="margin-top:30px;">
+<div class="inLine">
+  <div  style="margin-top:30px;">
     {{ event.name }} 
   </div>
   <div>
@@ -24,6 +24,6 @@
     {{ event.time }}
   </div>
   <div>
-    {{ event.location.address }}, {{ event.location.city }}, {{ event.location.country }}
+    {{event.location.address}}, {{ event.location.city }}, {{ event.location.country}}
   </div>
 </div>

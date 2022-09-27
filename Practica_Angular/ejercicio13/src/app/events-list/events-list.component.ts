@@ -1,3 +1,4 @@
+import { NgSwitch } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: [ './events-list.component.css' ]
 })
 export class EventsListComponent implements OnInit {
-
+  
   events = [
     {
       name: 'Angular Connect',
@@ -48,5 +49,14 @@ export class EventsListComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  setClasses(format: string|undefined) {
+    return {
+      "in-person": format === "InPerson",
+      online: format === "Online",
+      adeterminar : format === "",
+    }
+  }
+  
 
 }

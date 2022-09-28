@@ -49,4 +49,9 @@ export class EventsListComponent implements OnInit {
   ngOnInit() {
   }
 
+  currentStyles(format: string|undefined){
+    return {
+      color: format === "InPerson"? "green" : format === "Online"? "red": "#aaa"
+    }
+  }
 }

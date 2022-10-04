@@ -1,1 +1,8 @@
-<app-events-list></app-events-list>
+<nav>
+    <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/events-list" routerLinkActive= "active">Events List</a></li>
+    </ul>
+</nav>
+
+<router-outlet></router-outlet>

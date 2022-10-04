@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { EventsListComponent } from './events-list/events-list.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'events-list', component: EventsListComponent }
+]
 
 @NgModule({
   declarations: [
@@ -10,7 +15,7 @@ import { EventsListComponent } from './events-list/events-list.component';
     EventsListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, [RouterModule.forRoot(appRoutes)]
   ],
   providers: [],
   bootstrap: [AppComponent]

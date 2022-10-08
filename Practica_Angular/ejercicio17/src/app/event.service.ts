@@ -52,12 +52,15 @@ export class EventService {
     },
   ]; 
   
-  getEvent(eventId: number) {
-    return this.EVENTS.find(event => event.id === eventId);
-  }
-  
   getEvents() {
     return this.EVENTS;
+  }
+
+  getEvent(id: number) {
+    if (!id) {
+    return undefined; 
+    }
+    return this.EVENTS.find(event => event.id === id);
   }
 
   constructor() { }

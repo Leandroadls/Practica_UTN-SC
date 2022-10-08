@@ -12,7 +12,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let event of events">
-        <td><a [routerLink]="['events', event.id]">{{event.name}}</a></td>
+        <td><a [routerLink]="['/events', event.id]">{{event.name}}</a></td>
         <td>{{event.date}} </td>      
         <td>{{event.time}}</td>
         <td>{{event.location.address}}, {{event.location.city}}, {{event.location.country}}</td>

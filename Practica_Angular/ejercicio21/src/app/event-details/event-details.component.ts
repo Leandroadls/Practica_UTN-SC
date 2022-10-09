@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EventService } from '../event.service';
+import { ResolveService } from '../resolve.service';
+
 
 @Component({
   selector: 'app-event-details',
@@ -12,10 +13,14 @@ export class EventDetailsComponent implements OnInit {
   event: any;
   reviewed: boolean = false;
 
-  constructor(private eventService: EventService, private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private resolve: ResolveService) { }
 
   ngOnInit() {
-    this.event = this.eventService.getEvent(+this.activatedRoute.snapshot.params['eventId']);
+    console.log(this.activatedRoute.data) 
+    
+    // this.activatedRoute.data.subscribe(({ event }) => {
+    //   ;
+    // })
   }
 
   toggleReviewed() {

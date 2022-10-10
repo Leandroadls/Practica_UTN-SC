@@ -1,30 +1,31 @@
-<div>
-  <form>
-    <div class="form-group">
-      <label for="name">Nombre del evento:</label>
-      <input id="name" type="text"/>
+<div >
+  <form  (ngSubmit) = "onSubmit()" [formGroup] = "eventForm">
+    <div class="form-group" >
+      <label for="event-name">Nombre del evento:</label>
+      <input id="event-name" type="text" formControlName = "name"/>
     </div>
     <div class="form-group">
-      <label for="event-name">Fecha: </label>
-      <input id="date" type="text"/>
+      <label for="date">Fecha: </label>
+      <input id="date" type="text" formControlName = "date"/>
     </div>
     <div class="form-group">
-      <label for="event-name">Hora: </label>
-      <input id="time" type="text"/>
+      <label for="time">Hora: </label>
+      <input id="time" type="text" formControlName = "time"/>
     </div>
-    <div class="form-group">
-      <label for="event-name">Dirección: </label>
-      <input id="address" type="text"/>
-    </div>
-    <div class="form-group">
-      <label for="event-name">Ciudad: </label>
-      <input id="city" type="text"/>
-    </div>
-    <div class="form-group">
-      <label for="event-name">Pais: </label>
-      <input id="country" type="text"/>
-    </div>
-
+    <div formGroupName="location">
+      <div class="form-group">
+        <label for="address">Dirección: </label>
+        <input id="address" type="text" formControlName ="address"/>
+      </div>
+      <div class="form-group">
+        <label for="city">Ciudad: </label>
+        <input id="city" type="text" formControlName ="city"/>
+      </div>
+      <div class="form-group">
+      <label for="country">Pais: </label>
+      <input id="country" type="text" formControlName ="country"/>
+      </div>
+    </div>  
     <button type="submit" class="btn btn-primary">Guardar</button>
     <button type="button" class="btn btn-default" (click)="cancel()">Cancelar</button>
   </form>

@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule }  from '@angular/router';
 import { EventsListComponent } from './events-list/events-list.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { CreateEventPlantillaComponent } from './create-event-plantilla/create-event-plantilla.component';
 
 const appRoutes:Routes = [                                               
   { path: 'events', component: EventsListComponent },
   { path: 'events/new', component: CreateEventComponent },
-  { path: '', redirectTo: '/events', pathMatch: 'full' }                        
+  { path: 'events/newPlantilla', component: CreateEventPlantillaComponent },
+  { path: '', redirectTo: '/events', pathMatch: 'full' }
+
 ];
 
 @NgModule({

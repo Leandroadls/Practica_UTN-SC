@@ -9,4 +9,12 @@ label {
 .form-group {
     margin-top: 5px;
 }
- 
+
+input.ng-invalid.ng-touched 
+    {
+    background-color: lightsalmon
+}
+
+.alert{
+    color: red;    
+}

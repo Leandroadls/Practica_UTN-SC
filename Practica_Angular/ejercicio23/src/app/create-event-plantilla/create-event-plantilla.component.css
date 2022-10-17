@@ -1,0 +1,16 @@
+label {
+    display: block;
+}                                                   
+
+.form-group {
+    margin-top: 5px;
+}
+
+input.ng-invalid.ng-touched 
+    {
+    background-color: lightsalmon
+}
+
+.alert{
+    color: red;    
+}

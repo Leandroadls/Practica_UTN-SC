@@ -1,0 +1,102 @@
+<div >
+    <form (ngSubmit) = "formSubmit()" #eventForm="ngForm" >
+        <div class="form-group" >
+            <label for="event-name">Nombre del evento:</label>
+            <input 
+                id="event-name"
+                type="text"
+                name="name"
+                [(ngModel)]="myForm.name"
+                required
+                #nombre="ngModel"
+            />
+            <span *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert">
+                Nombre requerido    
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="date">Fecha: </label>
+            <input
+                id="date"
+                type="text"
+                name="date"
+                [(ngModel)]="myForm.date"
+                required
+                dateValidate
+            />
+            <div *ngIf="eventForm.form.controls['date'].errors">
+                <span *ngIf="eventForm.form.controls['date'].errors['isSaturday']" >
+                No puede ser Sabado!!
+                </span>
+                <span *ngIf="eventForm.form.controls['date'].errors['isSunday']" >
+                No puede ser Domingo!!
+                </span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="time">Hora: </label>
+            <input
+                id="time"
+                type="text"
+                name="time"
+                [(ngModel)]="myForm.time"
+                required
+                #hora="ngModel"
+            />
+            <span *ngIf="hora.invalid && (hora.dirty || hora.touched)" class="alert">
+                Hora requerida    
+            </span>
+        </div>
+
+        <div formGroupName="location">
+            <div class="form-group" >
+                <label for="address">Dirección: </label>
+                <input
+                    id="address"
+                    type="text"
+                    name="address"
+                    [(ngModel)]="myForm.location.address"
+                    required
+                    #direccion="ngModel"
+                />
+                <span *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)" class="alert">
+                    Dirección requerida    
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label for="city">Ciudad: </label>
+                <input
+                    id="city"
+                    type="text"
+                    name="city"
+                    [(ngModel)]="myForm.location.city"
+                    required
+                    #ciudad="ngModel"
+                />
+                <span *ngIf="ciudad.invalid && (ciudad.dirty || ciudad.touched)" class="alert">
+                    Ciudad requerida    
+                </span>
+            </div>
+    
+            <div class="form-group">
+                <label for="country">Pais: </label>
+                <input
+                    id="country"
+                    type="text"
+                    name="country"
+                    [(ngModel)]="myForm.location.country"
+                    required
+                    #pais="ngModel"
+                />
+                <span *ngIf="pais.invalid && (pais.dirty || pais.touched)" class="alert">
+                    País requerido    
+                </span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="eventForm.invalid">Guardar</button>
+        <button type="button" class="btn btn-default" (click)="cancel()">Cancelar</button>
+    </form>
+</div>

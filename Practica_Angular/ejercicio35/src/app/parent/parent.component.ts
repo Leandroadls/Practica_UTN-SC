@@ -21,10 +21,10 @@ export class ParentComponent implements OnInit {
   }
 
   sortAsc() {
-    // Implementar
+    this.movies = this.movies.sort( (a,b) => (a.rating > b.rating) ? 1: -1);
   }
 
   sortDesc() {
-    // Implementar
+    this.movies = this.movies.sort( (a,b) => (a.rating > b.rating) ? -1: 1);
   }
 }

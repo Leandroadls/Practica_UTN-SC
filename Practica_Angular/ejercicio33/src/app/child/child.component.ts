@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,8 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  @Input() quantity;
-  squaredQuantity: number;
+  @Input() quantity: number = 0;
+  squaredQuantity: number = 0;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    //console.log(changes);
+    this.squaredQuantity = Math.pow( this.quantity, 2);
+  }
 
   constructor() { }
 

@@ -1,1 +1,6 @@
 div { width: 250px; margin-bottom: 10px; background-color:black; padding: 4px }
+
+.hidden {
+    background-color: red;
+    color: white
+}

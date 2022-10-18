@@ -21,6 +21,10 @@ export class MoviesComponent implements OnInit {
   }
   
   ngOnInit() {
+		this.route.paramMap.subscribe((paramMap) => {
+			this.currentMovie = this.movies.find((m) => {
+				return m.id === +paramMap.get("id")!;
+			});
+		});
   }
-
 }

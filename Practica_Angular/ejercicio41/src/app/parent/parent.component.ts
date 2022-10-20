@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
+import { promise } from 'protractor';
+import { of, observable } from 'rxjs';
 
 @Component({
   selector: 'app-parent',
@@ -17,7 +18,7 @@ export class ParentComponent implements OnInit {
   }
 
   ngOnInit() {
-    // ingrese el código aquí
+    this.promise = this.obs.toPromise()
   }
 
   listen() {

@@ -9,20 +9,21 @@ import { Subject } from 'rxjs';
 export class ParentComponent implements OnInit {
 
   subject;
-  output = [];
+  output : string[] = [];
   
   constructor() {
     this.subject = new Subject();
-   }
+  }
 
   ngOnInit() {
     this.subject
-    .subscribe(key => {
-      this.output.push(key);
+      .subscribe ((key) => {
+        this.output.push(key);
+        this.output = this.output.map(mayusc =>  mayusc.toUpperCase());
     });
   }
 
-  keypress(e) {
+  keypress(e: any) : void {
     this.subject.next(e.key);
   }
   
